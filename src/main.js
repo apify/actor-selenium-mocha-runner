@@ -14,7 +14,8 @@ var mocha = new Mocha({});
 
 mocha.addFile('./test.cjs')
 
-mocha.run()
+const mochaPromise = new Promise((resolve) => {
+  mocha.run(() => resolve())
     .on('test', function(test) {
         console.log('Test started: '+test.title);
     })
@@ -33,6 +34,7 @@ mocha.run()
     .on('end', function() {
         console.log('All done');
     });
+});
 
-
-// await Actor.exit();
+await mochaPromise;
+await Actor.exit();
