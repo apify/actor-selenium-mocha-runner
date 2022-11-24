@@ -1,0 +1,17 @@
+{
+	"name": "actor-selenium-runner",
+	"version": "0.0.1",
+	"type": "module",
+	"description": "This is an example of an Apify actor.",
+	"dependencies": {
+		"apify": "^3.0.0",
+		"mocha": "^10.1.0",
+		"selenium-webdriver": "^4.6.1"
+	},
+	"scripts": {
+		"start": "node src/main.js",
+		"test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1"
+	},
+	"author": "It's not you it's me",
+	"license": "ISC"
+}

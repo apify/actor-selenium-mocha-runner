@@ -1,0 +1,7 @@
+{
+	"name": "actor-selenium-runner",
+	"version": "0.0",
+	"buildTag": "latest",
+	"env": null,
+	"template": "getting_started_node"
+}
