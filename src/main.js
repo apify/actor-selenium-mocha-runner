@@ -4,7 +4,7 @@ import Mocha from 'mocha';
 
 await Actor.init()
 
-const { seleniumMochaCode } = await Actor.getInput();
+let { seleniumMochaCode } = await Actor.getInput();
 
 seleniumMochaCode = seleniumMochaCode.replace('firefox', 'chrome');
 
