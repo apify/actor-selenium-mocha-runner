@@ -10,7 +10,7 @@ seleniumMochaCode = seleniumMochaCode.replace('firefox', 'chrome');
 
 fs.writeFileSync('test.cjs', seleniumMochaCode);
 
-var mocha = new Mocha({});
+const mocha = new Mocha({});
 
 if (mochaTimeoutSecs) mocha.timeout(mochaTimeoutSecs * 1000);
 
@@ -19,18 +19,16 @@ mocha.addFile('./test.cjs')
 const mochaPromise = new Promise((resolve) => {
   mocha.run(() => resolve())
     .on('test', function(test) {
-        console.log('Test started: '+test.title);
+        console.log('Test started: ' + test.title);
     })
     .on('test end', function(test) {
-        console.log('Test done: '+test.title);
+        console.log('Test done: '+ test.title);
     })
     .on('pass', function(test) {
         console.log('Test passed');
-        console.log(test);
     })
     .on('fail', function(test, err) {
         console.log('Test fail');
-        console.log(test);
         console.log(err);
     })
     .on('end', function() {
