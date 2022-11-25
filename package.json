@@ -5,6 +5,7 @@
 	"description": "This is an example of an Apify actor.",
 	"dependencies": {
 		"apify": "^3.0.0",
+		"chromedriver": "^107.0.3",
 		"mocha": "^10.1.0",
 		"selenium-webdriver": "^4.6.1"
 	},

@@ -4,13 +4,15 @@ import Mocha from 'mocha';
 
 await Actor.init()
 
-let { seleniumMochaCode } = await Actor.getInput();
+let { seleniumMochaCode, mochaTimeoutSecs } = await Actor.getInput();
 
 seleniumMochaCode = seleniumMochaCode.replace('firefox', 'chrome');
 
 fs.writeFileSync('test.cjs', seleniumMochaCode);
 
 var mocha = new Mocha({});
+
+if (mochaTimeoutSecs) mocha.timeout(mochaTimeoutSecs * 1000);
 
 mocha.addFile('./test.cjs')
 
